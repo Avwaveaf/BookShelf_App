@@ -1,0 +1,34 @@
+.categories-container{
+    padding: 20px;
+    .categories-masonry-grid {
+        display: -webkit-box; /* Not needed if autoprefixing */
+        display: -ms-flexbox; /* Not needed if autoprefixing */
+        display: flex;
+        width: auto;
+      }
+      .categories-grid_column {
+        padding-left: 10px; /* gutter size */
+        background-clip: padding-box;
+        .category-container { /* change div to reference your elements you put in <Masonry> */
+            border: 2px solid black;
+            display: flex;
+            height: inherit;
+            flex-direction: column;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            overflow: hidden;
+
+            .category-body-container{
+            background-color: rgba(255, 255, 255, 0.489);
+            width: 80%;
+            
+            margin: auto;
+            padding: 10px;
+            }
+          }
+
+      }
+      
+
+
+}
