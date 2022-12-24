@@ -68,7 +68,7 @@ export const Catergories = () => {
     { 
       categories.map(({ title, id, body, imgUrl}) => {
         return (
-            <CategoryItem title={title} id={id} body={body} imgUrl={imgUrl } />
+            <CategoryItem key={id} title={title} id={id} body={body} imgUrl={imgUrl } />
           
         )
 

@@ -1,0 +1,34 @@
+.navigation-container {
+  display: flex;
+  width: 100%;
+  background-color: whitesmoke;
+  justify-content: space-between;
+  .nav-link-logo {
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin: 10px;
+    .logo {
+      display: flex;
+      color: white;
+      background-color: black;
+      padding: 10px;
+    }
+  }
+  .navlink-container {
+    display: flex;
+    padding: 10px;
+    .nav-link {
+      padding: 5px;
+      background-color: black;
+      color: white;
+      text-decoration: none;
+      margin: 0 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+    }
+  }
+}
