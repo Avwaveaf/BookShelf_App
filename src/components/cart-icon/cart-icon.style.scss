@@ -1,0 +1,14 @@
+.nav-link-cart {
+  display: flex;
+  cursor: pointer;
+  user-select: none;
+  .cart_count {
+    display: flex;
+    position: relative;
+    left: -25px;
+    top: 15px;
+    font-weight: bolder;
+    cursor: pointer;
+    user-select: none;
+  }
+}

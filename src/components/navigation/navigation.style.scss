@@ -3,6 +3,7 @@
   width: 100%;
   background-color: whitesmoke;
   justify-content: space-between;
+  box-sizing: border-box;
   .nav-link-logo {
     text-decoration: none;
     align-items: center;
@@ -21,14 +22,18 @@
     padding: 10px;
     .nav-link {
       padding: 5px;
-      background-color: black;
-      color: white;
+      font-weight: bold;
+      color: rgb(77, 77, 77);
       text-decoration: none;
-      margin: 0 5px;
+      margin: 0 15px;
       display: flex;
       align-items: center;
       justify-content: center;
-      border-radius: 10px;
+
+      cursor: pointer;
+    }
+    .nav-link:hover {
+      border-bottom: 2px solid black;
     }
   }
 }

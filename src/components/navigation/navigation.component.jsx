@@ -5,6 +5,8 @@ import { useContext } from "react";
 import { UserContext } from "../../contexts/user.context";
 import "./navigation.style.scss"
 import { signOutUser } from "../../utils/firebase/firebase.utils";
+import CartIcon from "../cart-icon/cart-icon.component";
+import CartDropdown from "../cart-dropdown/cart-dropdown.component";
 export const Navigation = () => { 
     const { currentUser } = useContext(UserContext);
 
@@ -20,18 +22,27 @@ export const Navigation = () => {
                     Books
                 </Link>
                 { 
-                    currentUser?(
-                    <span className="nav-link" onClick={signOutUser}>Sign Out</span>
+                    currentUser ? (
+                        <Fragment>
+                        
+                            <span className="nav-link" onClick={signOutUser}>Sign Out</span>
+                            <CartIcon/>
+                        </Fragment>
                     ):(
+         
                         
                         <Link to="/sign-in" className="nav-link">
                         Sign In
-                    </Link>
+                                </Link>
+                
+        
                         ) 
                 }
+       
 
             </div>
         </div>
+        <CartDropdown/>
         <Outlet/>
     </Fragment>)
 }; 

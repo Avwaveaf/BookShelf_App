@@ -8,7 +8,7 @@ const ShopCard = ({ _id, title, longDescription, thumbnailUrl }) => {
         navigate(`/books/${_id}`)
      }
     return <div className="books_item" onClick={redirectHandler}>
-        <img src={thumbnailUrl} alt="" />
+        <img loading="lazy" src={thumbnailUrl} alt="" />
         <div className="shop-card-price">
         <i>${price }</i>
         </div>

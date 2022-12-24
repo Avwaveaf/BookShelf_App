@@ -1,0 +1,44 @@
+.sign-in-container {
+  display: flex;
+  height: 80vh;
+
+  .sign-in-card-container {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 300px;
+    border: 1px solid gray;
+    border-radius: 20px;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    .sign-logo-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 2px solid black;
+      border-radius: 50px;
+      width: 70px;
+      padding: 15px;
+      position: absolute;
+      left: 48%;
+      background-color: white;
+      top: 25%;
+    }
+    .cta-title {
+      padding: 30px;
+      font-size: 30px;
+      font-weight: bold;
+    }
+    button {
+      outline: none;
+      border: none;
+      background-color: black;
+      color: white;
+      padding: 20px;
+      border-radius: 25px;
+      cursor: pointer;
+    }
+  }
+}

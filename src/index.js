@@ -6,18 +6,22 @@ import { App } from './App';
 import reportWebVitals from './reportWebVitals';
 import { UserContextProvider } from './contexts/user.context';
 import { BooksContextProvider } from './contexts/books.context';
+import { DropdownContextProvider } from './contexts/dropdown.context';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BooksContextProvider>
-    <UserContextProvider>
-    <BrowserRouter>
-      <App />
-      </BrowserRouter>
+  <UserContextProvider>
+  <BooksContextProvider>
+      <DropdownContextProvider>
+      
+      <BrowserRouter>
+        <App />
+        </BrowserRouter>
+        </DropdownContextProvider>
+        </BooksContextProvider>
     </UserContextProvider>
-    </BooksContextProvider>
   </React.StrictMode>
 );
 
