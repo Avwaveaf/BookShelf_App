@@ -1,0 +1,52 @@
+.shop_container {
+  padding: 50px;
+  .shop-masonry-grid {
+    display: -webkit-box; /* Not needed if autoprefixing */
+    display: -ms-flexbox; /* Not needed if autoprefixing */
+    display: flex;
+    width: auto;
+  }
+  .shop-grid_column {
+    padding-left: 10px; /* gutter size */
+    background-clip: padding-box;
+
+    .books_item {
+      border: 2px solid black;
+      display: flex;
+      height: inherit;
+      flex-direction: column;
+      margin-bottom: 10px;
+      border-radius: 10px;
+      overflow: hidden;
+      padding: 10px;
+      cursor: pointer;
+      transition: 1s;
+      .books_item_body {
+        p {
+          border-bottom: 5px solid rgba(109, 109, 109, 0.259);
+          padding-bottom: 10px;
+        }
+      }
+      .shop-card-price {
+        margin: 10px 0;
+        margin-bottom: 0;
+        i {
+          color: green;
+          font-size: larger;
+        }
+      }
+      button {
+        outline: none;
+        border: none;
+        background-color: black;
+        color: white;
+        padding: 10px;
+        border-radius: 10px;
+      }
+    }
+    .books_item:hover {
+      transform: translateY(-15px);
+      background-color: whitesmoke;
+    }
+  }
+}

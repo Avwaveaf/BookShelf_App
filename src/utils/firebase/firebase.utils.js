@@ -1,11 +1,11 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import {getAuth, signInWithPopup, GoogleAuthProvider} from 'firebase/auth'
+import {getAuth, signInWithPopup, GoogleAuthProvider, signOut} from 'firebase/auth'
 import { getFirestore,doc, getDoc, setDoc} from 'firebase/firestore'
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
-
 // Your web app's Firebase configuration
+import { onAuthStateChanged } from "firebase/auth";
 const firebaseConfig = {
   apiKey: "AIzaSyC6CvBoofpZS15668B-eHosdd9sIDFM9c4",
   authDomain: "books-app-625bb.firebaseapp.com",
@@ -56,7 +56,7 @@ export const createUserDocFromAuth = async (authUser) => {
     // if user already exist then just return the userDocRef
     return userDocRef;
 };
-// export const createUserPostFromAuth = async(authUser, title, body) => { 
+// export const createUserPostFromAuth = async(authUser, title, body) => {
 //     const userDocRef = doc(db, "userPost", authUser.uid);
 //     const userPostSnapshot = await getDoc(userDocRef);
 //     if (!userPostSnapshot.exists()) {
@@ -75,3 +75,6 @@ export const createUserDocFromAuth = async (authUser) => {
 //     }
 //     return userPostSnapshot.data()
 // };
+
+export const signOutUser = async () => await signOut(auth);
+export const onAuthStateChangedListener = (callback) => onAuthStateChanged(auth, callback)
