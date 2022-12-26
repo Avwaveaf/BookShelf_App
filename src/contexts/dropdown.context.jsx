@@ -13,7 +13,8 @@ export const DropdownContext = createContext({
     setIsOpen: () => null,
     cartItems:[],
     setCartItems: () =>null,
-    addItemToCart:()=>null
+    addItemToCart:()=>null,
+    getTotalPrice:()=>null
 });
 export const DropdownContextProvider = ({ children }) => { 
     const [isOpen, setIsOpen] = useState(false);
@@ -26,6 +27,14 @@ export const DropdownContextProvider = ({ children }) => {
 
     }
 
-    const value = {isOpen, setIsOpen, cartItems,addItemToCart}
+    const getTotalPrice = () => {
+        const total = [];
+        cartItems.forEach((item) => total.push(item.price));
+        const totalPrice = total.reduce((acc, curr) => acc + curr, 0);
+        return totalPrice;
+    
+    }
+
+    const value = {isOpen, setIsOpen, cartItems,addItemToCart,getTotalPrice}
     return <DropdownContext.Provider value={value}>{children }</DropdownContext.Provider>
 };

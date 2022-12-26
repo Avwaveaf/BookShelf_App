@@ -2,8 +2,19 @@ import "./cart-dropdown.style.scss"
 import { useContext } from "react";
 import { DropdownContext } from "../../contexts/dropdown.context";
 import CartItem from "../cart-item/cart-item.component";
+import { useNavigate } from "react-router-dom";
 const CartDropdown = () => {
-    const { isOpen,cartItems } = useContext(DropdownContext)
+    const navigate = useNavigate();
+    const { isOpen,cartItems } = useContext(DropdownContext);
+    const onCheckOutRedirect = () => { 
+        if (cartItems.length) {
+
+            navigate('/checkout');
+        }
+        else { 
+            alert('you have nothing in your cart')
+        }
+    }
     if (isOpen) { 
 
         return <div className="cart-dropdown-container">
@@ -16,7 +27,7 @@ const CartDropdown = () => {
                 }
     
         </div>
-        <button type="">Checkout</button>
+        <button onClick={onCheckOutRedirect}>Checkout</button>
     </div>
     }
     return ""

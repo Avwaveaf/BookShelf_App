@@ -5,6 +5,7 @@ import { Home } from "./routes/home/home.component";
 import SignIn from "./components/sign-in/sign-in.component";
 import Shop from "./routes/shop/shop.component";
 import BookDetail from "./components/book_detail/book_detail.component";
+import Checkout from "./routes/checkout/checkout.component";
 
 const ErrorPage = () => {
   return <div>
@@ -21,7 +22,8 @@ export const App = () => {
         
         <Route path="books/:id" element={ <BookDetail/>} />
         
-        <Route path="sign-in" element={<SignIn/>} />
+        <Route path="sign-in" element={<SignIn />} />
+        <Route path="checkout" element={<Checkout/> } />
       </Route>
       <Route path="/*" element={ <ErrorPage/>} />
     </Routes>
