@@ -18,7 +18,7 @@ const Shop = () => {
     columnClassName="shop-grid_column"
     >
     {books.map((book) => {
-        return <ShopCard key={book._id} {...book} />
+        return <ShopCard key={book._id} {...book} data={book } />
      })}
     </Masonry>
 

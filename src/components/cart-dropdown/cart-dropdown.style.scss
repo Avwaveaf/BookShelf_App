@@ -10,10 +10,16 @@
   margin-right: 40px;
   z-index: 1;
   border: 1px solid gray;
-
+  h3 {
+    margin: 0;
+    padding: 10px;
+  }
   .dropdown-item {
     flex: 7;
-    padding: 20px;
+
+    padding: 0px 20px;
+    height: 300px;
+    overflow: scroll;
   }
   button {
     flex: 1;
@@ -21,4 +27,11 @@
     color: white;
     font-size: larger;
   }
+}
+
+.cart-dropdown-container::-webkit-scrollbar {
+  display: none;
+}
+.dropdown-item::-webkit-scrollbar {
+  display: none;
 }
