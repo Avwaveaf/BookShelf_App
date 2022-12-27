@@ -1,12 +1,9 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext,  } from "react";
 import { DropdownContext } from "../../contexts/dropdown.context";
 
 const Checkout = () => { 
-    const { cartItems, getTotalPrice } = useContext(DropdownContext);
-    const [totalPrice, setTotalPrice] = useState(0);
-    useEffect(() => { 
-        setTotalPrice(getTotalPrice);
-    },[])
+    const { cartItems,  addItemToCart, removeItemfromCart } = useContext(DropdownContext);
+
     return <div>
         <div>
             {cartItems.map(item => {
@@ -15,13 +12,15 @@ const Checkout = () => {
                         <img src={ item.thumbnailUrl} alt=""/>
                     </div>
                     <h3>{item.title}</h3>
-                    <span>${ item.price}</span>
-                    <span>X{ item.qty}</span>
+                    <span>${item.price}</span>
+                    <button onClick={()=>addItemToCart(item)}>Increment</button>
+                    <span>X{item.qty}</span>
+                    <button onClick={()=>removeItemfromCart(item)}>Decrement</button>
+                    
                 </div>
              })}
         </div>
         <div>
-            <span>total :{totalPrice }</span>
             
         </div>
     </div>
