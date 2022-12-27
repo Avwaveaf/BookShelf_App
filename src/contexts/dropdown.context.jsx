@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 const addItem = (cartItems, bookData) => {
     const existingCartItem = cartItems.find((item) => item._id === bookData._id);
@@ -14,6 +14,9 @@ const removeItem = (cartItems, bookDataToRemove) => {
     }
     return cartItems.map(item => item._id === bookDataToRemove._id ? {...item, qty:item.qty-1}:item)
 }
+const clearItem = (cartItems, bookDatatoClear) => { 
+    return cartItems.filter(item=>item._id !== bookDatatoClear._id)
+}
 
 export const DropdownContext = createContext({
     isOpen: null,
@@ -21,14 +24,22 @@ export const DropdownContext = createContext({
     cartItems: [],
     setCartItems: () => null,
     addItemToCart: () => null,
-    getTotalPrice: () => null,
-    removeItemfromCart: () => null
+    removeItemfromCart: () => null,
+    clearCartItem: () => null,
+    cartTotal:0,
+
 });
 export const DropdownContextProvider = ({ children }) => { 
     const [isOpen, setIsOpen] = useState(false);
     const [cartItems, setCartItems] = useState([]);
-
+    const [cartTotal, setCartTotal] = useState(0);
  
+    useEffect(() => { 
+        const total = cartItems.reduce((total, item) => {
+            return total + item.qty * item.price;
+        }, 0);
+        setCartTotal(total)
+    },[cartItems])
 
     const addItemToCart = (bookData) => {
         setCartItems(addItem(cartItems,bookData))
@@ -39,9 +50,14 @@ export const DropdownContextProvider = ({ children }) => {
         setCartItems(removeItem(cartItems,bookDataToREmove))
 
     }
+    const clearCartItem = (bookDatatoClear) => {
+        setCartItems(clearItem(cartItems,bookDatatoClear))
+
+    }
 
 
 
-    const value = {isOpen, setIsOpen, cartItems,addItemToCart,removeItemfromCart}
+
+    const value = {isOpen, setIsOpen, cartItems,addItemToCart,removeItemfromCart, clearCartItem, cartTotal}
     return <DropdownContext.Provider value={value}>{children }</DropdownContext.Provider>
 };
