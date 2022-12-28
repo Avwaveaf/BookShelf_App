@@ -1,0 +1,22 @@
+.shop-masonry-grid {
+  display: -webkit-box; /* Not needed if autoprefixing */
+  display: -ms-flexbox; /* Not needed if autoprefixing */
+  display: flex;
+  width: auto;
+}
+.shop-grid_column {
+  padding-left: 10px; /* gutter size */
+  background-clip: padding-box;
+
+  .books_item {
+    border: 2px solid black;
+    display: flex;
+    height: inherit;
+    flex-direction: column;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 10px;
+    cursor: pointer;
+  }
+}

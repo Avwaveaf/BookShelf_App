@@ -1,21 +1,27 @@
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { DropdownContext } from "../../contexts/dropdown.context";
+import { UserContext } from "../../contexts/user.context";
 const ShopCard = ({ _id, title, longDescription, thumbnailUrl, data }) => {
-    const { addItemToCart} = useContext(DropdownContext)
+    const { addItemToCart} = useContext(DropdownContext);
+    const {currentUser} = useContext(UserContext)
     const navigate = useNavigate();
     const limit = String(longDescription).length /10;
     const desc = String(longDescription).slice(0, limit) + "...";
     const price = Math.floor((Math.random() * 30) + 10);
     const redirectHandler = () => {
-        navigate(`/books/${_id}`)
+        navigate(`/books/detail/${_id}`)
      }
     const addToCartHandler = () => {
-        addItemToCart({
-            ...data,
-            qty: 1,
-            price:price
-        })
+        if (currentUser) {
+            addItemToCart({
+                ...data,
+                qty: 1,
+                price: price
+            });
+        } else { 
+            navigate('/sign-in')
+        }
      }
     return <div className="books_item" >
         <img loading="lazy" src={thumbnailUrl} alt="" onClick={redirectHandler} />
