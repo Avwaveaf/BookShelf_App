@@ -11,19 +11,24 @@
     padding: 15px;
     background-color: black;
     color: white;
+    box-sizing: border-box;
     font-weight: bold;
     .image {
       flex: 2;
       padding-left: 10px;
     }
     .title {
-      flex: 7;
+      flex: 6;
     }
     .price {
-      flex: 1;
+      flex: 2;
     }
     .qty {
       flex: 3;
+      text-align: start;
+    }
+    .blank {
+      flex: 1;
     }
   }
   .checkout-item-container {
@@ -51,6 +56,7 @@
       span {
         flex: 1;
         justify-content: center;
+        margin-right: 8px;
         text-align: center;
       }
       button {
@@ -67,6 +73,10 @@
       }
       button:hover {
         transform: translateY(-6px);
+      }
+      .clear-button {
+        margin-left: 10px;
+        font-size: medium;
       }
     }
     .checkout-item:hover {

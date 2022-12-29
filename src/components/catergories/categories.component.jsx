@@ -59,7 +59,7 @@ export const Catergories = () => {
         700:1
       }
     return (<div className="categories-container">
-    
+    <h2>Catalogue</h2>
     <Masonry
     breakpointCols={breakpointsMasonry}
     className="categories-masonry-grid"

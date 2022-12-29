@@ -12,6 +12,7 @@ const Checkout = () => {
                 <span className="image">Product Picture</span>
                 <span className="title">Title</span>
                 <span className="price">Price</span>
+                <span className="blank"></span>
                 <span className="qty">Quantity</span>
             </div>
             {cartItems.map(item => {
@@ -24,8 +25,7 @@ const Checkout = () => {
                     <button onClick={() => removeItemfromCart(item)}><GoogleIcon className="button-icon" iconName="remove" style={{color:"white", cursor:"pointer"}}/></button>
                     <span>X{item.qty}</span>
                     <button onClick={()=>addItemToCart(item)}><GoogleIcon iconName="exposure_plus_1"  style={{color:"white", cursor:"pointer"}}/></button>
-                    
-                    <button onClick={()=>clearCartItem(item)}>clear</button>
+                    <button className="clear-button" onClick={()=>clearCartItem(item)}>clear</button>
                 </div>
             })}
         </div>

@@ -22,7 +22,8 @@ const ShopCard = ({ _id, title, longDescription, thumbnailUrl, data }) => {
         } else { 
             navigate('/sign-in')
         }
-     }
+    }
+    
     return <div className="books_item" >
         <img loading="lazy" src={thumbnailUrl} alt="" onClick={redirectHandler} />
         <div className="shop-card-price">

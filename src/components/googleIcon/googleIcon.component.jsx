@@ -3,4 +3,4 @@ const GoogleIcon = ({iconName, style }) => {
         { iconName}
     </span>
 };
-export default GoogleIcon
+export default GoogleIcon;
