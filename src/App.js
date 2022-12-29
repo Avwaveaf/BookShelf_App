@@ -10,6 +10,17 @@ const ErrorPage = () => {
     error 404 page not found
   </div>
 }
+const Button = () => {
+  const handleClick = () => {
+    console.log(Button.toString());
+  };
+
+  return (
+    <button onClick={handleClick}>
+      Click me
+    </button>
+  );
+};
 
 export const App = () => {
   return (
@@ -18,7 +29,8 @@ export const App = () => {
         <Route index element={<Home />} />
         <Route path="books/*" element={<ShopRoutes />}/>
         <Route path="sign-in" element={<SignIn />} />
-        <Route path="checkout" element={<Checkout/> } />
+        <Route path="checkout" element={<Checkout />} />
+        <Route path="button" element={ <Button/>} />
       </Route>
       <Route path="/*" element={ <ErrorPage/>} />
     </Routes>

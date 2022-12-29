@@ -3,10 +3,11 @@ import { Link } from "react-router-dom";
 import { Fragment } from "react";
 import { useContext } from "react";
 import { UserContext } from "../../contexts/user.context";
-import "./navigation.style.scss"
+import "./navigation.style.scss";
 import { signOutUser } from "../../utils/firebase/firebase.utils";
 import CartIcon from "../cart-icon/cart-icon.component";
 import CartDropdown from "../cart-dropdown/cart-dropdown.component";
+import Logo from "../Logo/logo.component";
 export const Navigation = () => { 
     const { currentUser } = useContext(UserContext);
 
@@ -14,7 +15,7 @@ export const Navigation = () => {
         <div className="navigation-container">
             <Link to="/" className="nav-link-logo">            
             <div className="logo">    
-                Logo
+                <Logo/>
             </div>
             </Link>
             <div className="navlink-container">
