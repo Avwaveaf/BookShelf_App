@@ -10,7 +10,7 @@ I hope you enjoy using this app as much as I enjoyed creating it. Thank you for 
 the app are hosted on this url : 🌐 https://scintillating-lily-70d3b4.netlify.app/
 
 ## Note
->  on this app i use random number from 0 to 30 to get each item price, so the price gonna be different on each refresh, but on the checkout page. the app will calculate the price as the first price the user click the item. 
+>  on this app i use random number from 0 to 30 to get each item price, so the price gonna be different on each refresh, but on the checkout page. the app will calculate the price as the first price by the time the user click on each item. 
 
 > secondly, im still improving this project. i want to use redux and add transaction system to the project.
 
